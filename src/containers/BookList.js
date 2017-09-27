@@ -11,13 +11,13 @@ class BookList extends Component {
 
     //must create a map function here to return the following:
 
-    let books = this.props.books.map((book, index) => {
+    let books = this.props.books.map((book, index) => (
 
       <li
         key={book.id}
         onClick={() => this.props.selectBook(book)}
         className="list-group-item">{book.title}</li>
-    })
+    ));
 
 
     return (
@@ -33,7 +33,7 @@ function mapStateToProps(state) {
   //what is returned will show up as props inside of BookList
   //this gives you access to books in props.. (books would be good for mapping)
   return {
-    books: state.books,
+    books: state.books
   };
 }
 
